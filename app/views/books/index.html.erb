@@ -1,0 +1,50 @@
+<div class="container">
+<div class="row">
+<%@books.each do |book| %>
+ <div class="col-md-4 ">
+<div class="card" style="width: 20rem;">
+<%= image_tag book.image.url(:original),width: 320, height: 400, class:"card-img-top" %>
+  
+  <div class="card-block">
+    <h3><%=link_to book.title, book_path(book), class: "card-title"%></h3>
+    <p class="card-text"><%= book.description%></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+     
+    <%= link_to like_book_path(book), method: :put do %>
+  Upvote
+  <%= book.get_upvotes.size %>
+<% end %>
+
+    
+
+    
+  </div>
+</div>
+ <br>
+ <br>
+ </div>
+ <%end%>
+ <br>
+
+</div>
+
+<br>
+<br>
+<br>
+<hr>
+<%= link_to "New" , new_book_path, class: "btn btn-success btn-lg"%>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

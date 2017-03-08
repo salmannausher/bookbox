@@ -1,0 +1,15 @@
+<%= image_tag @book.image.url(:original),width: 300, height: 400%>
+<h2>
+  <strong>Title:</strong>&nbsp
+  <%= @book.title %>
+</h2>
+<p>
+	<%= @book.description%>
+</p>
+<p>
+     Submited By :
+	<%= @book.user.email%>
+</p>
+<%= link_to "Home", root_path, class: "btn btn-primary" %>
+<%= link_to "Edit", edit_book_path, class: "btn btn-primary" %>
+<%= link_to "Delete", book_path, method: :delete, data: {confirm: "Are You Suere To delete book"}, class: "btn btn-primary" %>
