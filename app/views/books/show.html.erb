@@ -8,8 +8,12 @@
 </p>
 <p>
      Posted By :
-	<%= @book.user.email%>
+	<%= @book.user.email%>&nbsp<%=time_ago_in_words(@book.created_at) %> ago
 </p>
 <%= link_to "Home", root_path, class: "btn btn-primary" %>
+<% if @book.user_id == current_user.id %>
+<% if user_signed_in? %>
 <%= link_to "Edit", edit_book_path, class: "btn btn-primary" %>
 <%= link_to "Delete", book_path, method: :delete, data: {confirm: "Are You Suere To delete book"}, class: "btn btn-primary" %>
+<%end%>
+<%end%>

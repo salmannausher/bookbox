@@ -1,6 +1,7 @@
+
 <div class="container">
 <div class="login card-container">
-<form class="form-signin">
+
 
 
 
@@ -27,10 +28,11 @@
   <div class="form-group">
     <%= f.button :submit, "Sign up",class:"btn btn-lg btn-primary btn-block btn-signin" %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
-<%= render "devise/shared/links" %>
-</form>
-</div>
+
+
+
 
 </div>
-
+</div>

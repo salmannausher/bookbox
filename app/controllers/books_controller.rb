@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :find_book, only:[:show, :edit, :update, :destroy, :upvote]
-before_action :authenticate_user!, except: [:index, :show]
+before_action :authenticate_user!
 	def index
 		@books = Book.all.order('created_at DESC')
 	end
@@ -36,12 +36,6 @@ end
 			render 'new'
 		end
 	end
-
-def upvote
-	 @book = Book.find(params[:id])
-  @book.upvote_by current_user
-  redirect_to books_path
-end
 
 	private
 
